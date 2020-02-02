@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="root">
+    <h1>Progress</h1>
+    <div class="content">
+      <div class="circle">
+        <svg class="circle__svg">
+          <circle class="circle__bg" />
+          <circle class="circle__shape" />
+        </svg>
+      </div>
+      <div class="settings">
+        <div class="settings__option">
+          <input class="settings__value" id="value">
+          <label class="settings__label" for="value">Value</label>
+        </div>
+        <div class="settings__option">
+          <input class="settings__checkbox" id="animate" type="checkbox">
+          <label class="settings__label" for="animate">Animate</label>
+        </div>
+        <div class="settings__option">
+          <input class="settings__checkbox" id="hide" type="checkbox">
+          <label class="settings__label" for="hide">Hide</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

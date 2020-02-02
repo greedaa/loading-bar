@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.root {
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 25px;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 150px;
+  width: 100%;
+}
+
+.circle {
+  width: var(--wh);
+  height: var(--wh);
+  display: flex;
+  margin-right: 20px;
+
+  &__svg {
+    --center: calc(var(--wh) / 2);
+    --r: calc(var(--wh) / 2 - var(--stroke-width) / 2);
+    --dasharray: calc(var(--r) / 0.1585);
+    transform: rotate(-90deg);
+  }
+
+  &__shape {
+    r: var( --r);
+    fill: none;
+    stroke-width: var( --stroke-width);
+    stroke: #FFDF39;
+    stroke-dasharray: var( --dasharray);
+    stroke-dashoffset: calc(var( --dasharray) - var(--dasharray) / var(--max-value) * var(--value));
+    cy: var(--center);
+    cx: var(--center);
+  }
+
+  &__bg {
+    position: absolute;
+    r: var( --r);
+    fill: none;
+    stroke-width: var( --stroke-width);
+    stroke: #EFEFEC;
+    cy: var(--center);
+    cx: var(--center);
+  }
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+
+  &__option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__value {
+    border-radius: 40px;
+    border: 1px solid #000;
+    width: 40px;
+    font-size: 17px;
+    text-align: center;
+    outline: none;
+  }
+
+  &__label {
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+  &__checkbox {
+    margin: 0;
+    position: relative;
+    appearance: none; 
+    outline: none;
+    width: 42px; 
+    height: 24px;
+    padding: 1px 0;
+    background-color: #494949;
+    border: 1px solid #494949;
+    border-radius: 50px; 
+    transition-duration: 400ms;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 20px; 
+      height: 20px;
+      background-color: #D6D6D6;
+      border-radius: 50px; 
+    }
+    &:checked {
+      border-color: #54DF16;
+      background-color: #54DF16;
+    }
+    &:checked:after {
+      left: 18px;
+      background-color: #fff;
+    }
+  }
+}
